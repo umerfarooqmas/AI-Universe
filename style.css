@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+/* Header */
+header {
+  background: #0d6efd;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap; /* allows wrap on small screens */
+}
+
+header h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Intro Section */
+section.intro {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+section.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section.intro p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+article {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+ul {
+  font-size: 1.1rem;
+  color: #4b5563;
+  list-style-type: square;
+  margin-left: 2rem;
+  line-height: 1.7;
+}
+
+/* Footer */
+footer {
+  background: #0d6efd;
+  text-align: center;
+  padding: 0.6rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE SECTION */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+    gap: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  section.intro h1 {
+    font-size: 1.6rem;
+  }
+
+  section.intro p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p,
+  ul {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  section.intro h1 {
+    font-size: 1.4rem;
+  }
+
+  section.intro p {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p,
+  ul {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
