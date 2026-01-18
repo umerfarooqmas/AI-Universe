@@ -2,45 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Explore AI Universe – Discover Artificial Intelligence, Machine Learning, Deep Learning, Data Science, Robotics, NLP, Computer Vision, and more. Learn how AI is shaping the future.">
+<meta name="keywords" content="Artificial Intelligence, AI, Machine Learning, Deep Learning, Data Science, Robotics, NLP, Computer Vision, AI Healthcare, AI Finance, Big Data, Cloud AI, Edge AI, Visualization, Reinforcement Learning, Generative AI, Quantum AI, AI Ethics, Automation, AI Security, AI Research">
+<meta name="author" content="AI Universe">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="AI Universe – Discover the World of Artificial Intelligence">
+<meta property="og:description" content="Explore AI Universe to learn about AI, Machine Learning, Data Science, Deep Learning, Robotics, NLP, and more. Your guide to the future of intelligent technology.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://umerfarooqmas.github.io/AI-Universe/">
+<meta property="og:image" content="https://yourwebsite.com/ai-universe-preview.png">
+
+
 <title>AI Universe</title>
 
-<!-- Font Awesome CDN -->
+<!-- Font Awesome -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #f0f2f5;
   color: #1f2937;
 }
+
+/* ================= HEADER ================= */
 header {
   background: #0d6efd;
-  padding: 15px 15px;
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;   /* Make header sticky */
-  top: 0;             /* Stick to the top */
-  z-index: 1000;      /* Stay above other content */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
 
 header h1 {
   color: #fff;
   margin: 0;
+  font-size: 1.4rem;
 }
 
-/* Header links with white underline on hover */
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 1.5rem;
   font-weight: 600;
-  position: relative; /* for underline effect */
-  transition: all 0.3s ease;
+  position: relative;
 }
 
 nav a::after {
@@ -50,7 +73,7 @@ nav a::after {
   height: 2px;
   left: 0;
   bottom: -4px;
-  background-color: #fff;
+  background: #fff;
   transition: width 0.3s ease;
 }
 
@@ -58,9 +81,18 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= INTRO ================= */
 .intro {
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem 1rem;
 }
 
 .intro h1 {
@@ -71,24 +103,25 @@ nav a:hover::after {
 .intro p {
   font-size: 1rem;
   color: #4b5563;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 650px;
+  margin: auto;
 }
 
+/* ================= MAIN ================= */
 main {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
-/* Card styling for links */
+/* CARD */
 .cards a.card {
   height: 200px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 16px;
   padding: 1.2rem;
   display: flex;
@@ -96,10 +129,10 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: all 0.35s ease;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   text-decoration: none;
   color: inherit;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
 }
 
 .cards a.card:hover {
@@ -109,7 +142,7 @@ main {
 }
 
 .card i {
-  font-size: 42px;
+  font-size: 40px;
   color: #00b4d8;
   margin-bottom: 0.6rem;
 }
@@ -124,11 +157,58 @@ main {
   color: #4b5563;
 }
 
+/* ================= FOOTER ================= */
 footer {
   background: #0d6efd;
   text-align: center;
   padding: 1rem;
   color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: #0d6efd;
+    padding: 1rem 0;
+  }
+
+  nav a {
+    padding: 0.6rem 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .intro h1 {
+    font-size: 1.6rem;
+  }
+
+  .cards a.card {
+    height: auto;
+    padding: 1.4rem;
+  }
 }
 </style>
 </head>
@@ -136,51 +216,47 @@ footer {
 
 <header>
   <h1>AI Universe</h1>
-  <nav>
+  <nav id="navMenu">
     <a href="index.html">HOME</a>
     <a href="future.html">FUTURE</a>
     <a href="Aboutus.html">ABOUT US</a>
   </nav>
 </header>
 
-<!-- Intro Section -->
 <section class="intro">
   <h1>AI Universe</h1>
   <p>Discover the world of Artificial Intelligence, where machines learn, reason, and innovate for a smarter future.</p>
 </section>
 
 <main>
-  <section class="cards">
+<section class="cards">
 
-    <!-- Top 4 -->
-    <a href="AI.html" class="card"><i class="fa-solid fa-brain"></i><h1>Artificial Intelligence</h1><p>Machines that think and reason.</p></a>
-    <a href="DS.html" class="card"><i class="fa-solid fa-database"></i><h1>Data Science</h1><p>Extracting insights from data.</p></a>
-    <a href="ML.html" class="card"><i class="fa-solid fa-robot"></i><h1>Machine Learning</h1><p>Systems that learn automatically.</p></a>
-    <a href="DL.html" class="card"><i class="fa-solid fa-network-wired"></i><h1>Deep Learning</h1><p>Neural networks powering AI.</p></a>
+<a href="AI.html" class="card"><i class="fa-solid fa-brain"></i><h1>Artificial Intelligence</h1><p>Machines that think and reason.</p></a>
+<a href="DS.html" class="card"><i class="fa-solid fa-database"></i><h1>Data Science</h1><p>Extracting insights from data.</p></a>
+<a href="ML.html" class="card"><i class="fa-solid fa-robot"></i><h1>Machine Learning</h1><p>Systems that learn automatically.</p></a>
+<a href="DL.html" class="card"><i class="fa-solid fa-network-wired"></i><h1>Deep Learning</h1><p>Neural networks powering AI.</p></a>
 
-    <!-- Remaining 20 -->
-    <a href="Robotics.html" class="card"><i class="fa-solid fa-robot"></i><h1>Robotics</h1><p>Autonomous intelligent machines.</p></a>
-    <a href="NLP.html" class="card"><i class="fa-solid fa-language"></i><h1>NLP</h1><p>Understanding human language.</p></a>
-    <a href="CV.html" class="card"><i class="fa-solid fa-eye"></i><h1>Computer Vision</h1><p>AI that sees and analyzes.</p></a>
-    <a href="Etc.html" class="card"><i class="fa-solid fa-scale-balanced"></i><h1>AI Ethics</h1><p>Responsible AI systems.</p></a>
-    <a href="Hc.html" class="card"><i class="fa-solid fa-heart-pulse"></i><h1>AI Healthcare</h1><p>Smarter medical solutions.</p></a>
-    <a href="Finance.html" class="card"><i class="fa-solid fa-coins"></i><h1>AI Finance</h1><p>Automated financial intelligence.</p></a>
-    <a href="BD.html" class="card"><i class="fa-solid fa-chart-column"></i><h1>Big Data</h1><p>Handling massive datasets.</p></a>
-    <a href="An.html" class="card"><i class="fa-solid fa-chart-line"></i><h1>Analytics</h1><p>Data-driven decision making.</p></a>
-    <a href="CloudAI.html" class="card"><i class="fa-solid fa-cloud"></i><h1>Cloud AI</h1><p>AI powered by cloud.</p></a>
-    <a href="EdAI.html" class="card"><i class="fa-solid fa-microchip"></i><h1>Edge AI</h1><p>Local intelligent computing.</p></a>
-    <a href="vl.html" class="card"><i class="fa-solid fa-chart-pie"></i><h1>Visualization</h1><p>Visual data storytelling.</p></a>
-    <a href="Rf.html" class="card"><i class="fa-solid fa-gamepad"></i><h1>Reinforcement Learning</h1><p>Learning through rewards.</p></a>
-    <a href="G.html" class="card"><i class="fa-solid fa-wand-magic-sparkles"></i><h1>Generative AI</h1><p>AI creating content.</p></a>
-    <a href="Qt.html" class="card"><i class="fa-solid fa-atom"></i><h1>Quantum AI</h1><p>Next-gen intelligence.</p></a>
-    <a href="Automation.html" class="card"><i class="fa-solid fa-gears"></i><h1>Automation</h1><p>Smart automated systems.</p></a>
-    <a href="Security.html" class="card"><i class="fa-solid fa-shield-halved"></i><h1>AI Security</h1><p>Protecting AI systems.</p></a>
-    <a href="Research.html" class="card"><i class="fa-solid fa-flask"></i><h1>AI Research</h1><p>Innovation and discovery.</p></a>
-    <a href="future.html" class="card"><i class="fa-solid fa-globe"></i><h1>Future AI</h1><p>AI shaping tomorrow.</p></a>
-    <a href="aboutus.html" class="card"><i class="fa-solid fa-circle-info"></i><h1>About AI</h1><p>AI fundamentals.</p></a>
+<a href="Robotics.html" class="card"><i class="fa-solid fa-robot"></i><h1>Robotics</h1><p>Autonomous intelligent machines.</p></a>
+<a href="NLP.html" class="card"><i class="fa-solid fa-language"></i><h1>NLP</h1><p>Understanding human language.</p></a>
+<a href="CV.html" class="card"><i class="fa-solid fa-eye"></i><h1>Computer Vision</h1><p>AI that sees and analyzes.</p></a>
+<a href="Etc.html" class="card"><i class="fa-solid fa-scale-balanced"></i><h1>AI Ethics</h1><p>Responsible AI systems.</p></a>
+<a href="Hc.html" class="card"><i class="fa-solid fa-heart-pulse"></i><h1>AI Healthcare</h1><p>Smarter medical solutions.</p></a>
+<a href="Finance.html" class="card"><i class="fa-solid fa-coins"></i><h1>AI Finance</h1><p>Automated financial intelligence.</p></a>
+<a href="BD.html" class="card"><i class="fa-solid fa-chart-column"></i><h1>Big Data</h1><p>Handling massive datasets.</p></a>
+<a href="An.html" class="card"><i class="fa-solid fa-chart-line"></i><h1>Analytics</h1><p>Data-driven decision making.</p></a>
+<a href="CloudAI.html" class="card"><i class="fa-solid fa-cloud"></i><h1>Cloud AI</h1><p>AI powered by cloud.</p></a>
+<a href="EdAI.html" class="card"><i class="fa-solid fa-microchip"></i><h1>Edge AI</h1><p>Local intelligent computing.</p></a>
+<a href="vl.html" class="card"><i class="fa-solid fa-chart-pie"></i><h1>Visualization</h1><p>Visual data storytelling.</p></a>
+<a href="Rf.html" class="card"><i class="fa-solid fa-gamepad"></i><h1>Reinforcement Learning</h1><p>Learning through rewards.</p></a>
+<a href="G.html" class="card"><i class="fa-solid fa-wand-magic-sparkles"></i><h1>Generative AI</h1><p>AI creating content.</p></a>
+<a href="Qt.html" class="card"><i class="fa-solid fa-atom"></i><h1>Quantum AI</h1><p>Next-gen intelligence.</p></a>
+<a href="Automation.html" class="card"><i class="fa-solid fa-gears"></i><h1>Automation</h1><p>Smart automated systems.</p></a>
+<a href="Security.html" class="card"><i class="fa-solid fa-shield-halved"></i><h1>AI Security</h1><p>Protecting AI systems.</p></a>
+<a href="Research.html" class="card"><i class="fa-solid fa-flask"></i><h1>AI Research</h1><p>Innovation and discovery.</p></a>
+<a href="future.html" class="card"><i class="fa-solid fa-globe"></i><h1>Future AI</h1><p>AI shaping tomorrow.</p></a>
+<a href="aboutus.html" class="card"><i class="fa-solid fa-circle-info"></i><h1>About AI</h1><p>AI fundamentals.</p></a>
 
-
-  </section>
+</section>
 </main>
 
 <footer>
